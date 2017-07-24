@@ -10,7 +10,6 @@ VOLUME ["/gitea/data"]
 ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["/bin/s6-svscan", "/etc/s6"]
 
-COPY passwd.template /tmp/passwd.template
 
 USER root
 RUN mkdir -p /gitea/data/gitea
