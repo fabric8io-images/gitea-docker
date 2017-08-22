@@ -1,4 +1,7 @@
 # Copy configuration template
+
+
+echo "$1"
 mkdir -p /gitea/data/gitea/conf/
 if [ ! -e /gitea/data/gitea/conf/app.ini ]; then
     cp /tmp/app.ini /gitea/data/gitea/conf/app.ini
@@ -8,6 +11,7 @@ fi
 if [ ! -e /data/git ]; then
     mkdir -p /gitea/data/git
 fi
+
 
 # Generate secret key
 generate_secret_key=$(grep SECRET_KEY /gitea/data/gitea/conf/app.ini | grep generate | wc -l)
@@ -33,4 +37,6 @@ fi
 
 # Run gitea
 cd /gitea/data/gitea
-/gitea/app/gitea/gitea web
+
+echo "Starting Gitea"
+/opt/app/gitea/gitea web
