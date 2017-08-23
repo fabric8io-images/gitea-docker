@@ -28,8 +28,8 @@ RUN cd / && \
 
 USER root
 RUN chgrp -R 0 ${GITEA_APP_DIR}
-RUN chmod -R g+rw ${GITEA_APP_DIR}
-RUN chmod g+x ${GITEA_APP_DIR}/gitea
+RUN chmod -R g+r ${GITEA_APP_DIR}
+RUN chmod 555 ${GITEA_APP_DIR}/gitea
 
 
 ENV GODEBUG=netdns=go

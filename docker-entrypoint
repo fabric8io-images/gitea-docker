@@ -39,4 +39,6 @@ fi
 cd /gitea/data/gitea
 
 echo "Starting Gitea"
+ls -l /opt/app/gitea/gitea
+
 /opt/app/gitea/gitea web
